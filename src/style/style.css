@@ -2,7 +2,7 @@
 
 .ir{
     display: block;
-    overflow: hidden;
+    overflow: hidden;   
     position:absolute;
     text-indent: -9999;
     line-height: 0;
@@ -20,11 +20,17 @@ body{
 
 .app{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
     gap: 0 28px;
     padding-top: 247px;
     font-family: 'Noto Sans KR', sans-serif;
+}
+
+.app .vending-machine{
+    padding: 31px 27px 28px;
+    border-radius: 5px;
 }
 
 .app .vending-machine, .app .my-info{
@@ -64,7 +70,7 @@ body{
     height: 100%;
     top: 0;
     left: 0;
-    border: 3px solid rgb(83, 53, 203);
+    border: 3px solid rgb(156, 173, 215);
     border-radius: 10px;
     box-sizing: border-box; /* 보더의 값도 넓이에 포함시키기 위해*/
 }
@@ -79,4 +85,216 @@ body{
     left: 0;
     border-radius: 10px;
     background: no-repeat center/ 58px 45px url(/src/images/Sold-out.png) rgba(0, 0, 0, 0.8);
+}
+
+.vending-machine .list-item li.sold-out{
+    pointer-events: none;
+}
+
+.vending-machine .list-item li:nth-child(3)~li{
+    margin-top: 12px;
+}
+
+.vending-machine .btn-item{
+    display:block;
+    width:100%;
+    height:100%;
+    border: 1px solid #bdbdbd;
+
+}
+
+.vending-machine .list-item .img-item{
+    width: 36px;
+    height: 65px;
+    margin: 0 auto;
+}
+
+.vending-machine .tit-item{
+    display:block;
+    font-size: 9px;
+    margin: 6px 0 7px;
+}
+
+.vending-machine .txt-price{
+    font-size: 12px;
+    padding: 5px 16px 5px;
+    border-radius: 50px;
+    background-color: rgb(35, 59, 120);
+    color: #FFF;
+    display: inline-block;
+}
+
+.container-return, .container-put, .container-get{
+    display: flex;
+    justify-content: space-between;
+    margin-top:12px;
+}
+
+.container-return .info-balance, .container-put .input-put, .container-get .list-item-staged{
+    width: 65%;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.container-return .btn-return, .container-put .btn-put, .container-get .btn-get{
+    width:30%;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: 1px solid #bdbdbd;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.vending-machine .container-return{
+    margin-top: 20px;
+}
+
+.container-return .info-balance{
+    overflow: hidden;
+    padding: 6px 10px;
+    font-size: 13px;
+    background-color: rgb(35, 59, 120);
+    color:#FFF;
+}
+
+.info-balance .txt-balance{
+    float:right;
+}
+
+.container-put .input-put{
+    padding: 6px 6px 7px;
+    border: 1px solid #bdbdbd;
+}
+
+.container-get .btn-get{
+    font-weight: 700;
+    background-color: rgb(35, 59, 120);
+    color: #FFF
+}
+
+.container-get .list-item-staged{
+    height: 106px;
+    overflow-y: scroll;
+    padding: 12px;
+    border: 1px solid #bdbdbd;
+    box-sizing: border-box;
+    background-color: rgb(186, 201, 236);
+}
+
+.list-item-staged li{
+    overflow: hidden;
+    padding: 6px 8px 7px 10px;
+    background-color: #FFF;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.list-item-staged li+li{
+    margin-top:6px;
+}
+
+.list-item-staged .img-item, .list-item-staged .txt-item{
+    float:left;
+}
+
+.list-item-staged .img-item{
+    width: 18px;
+    height: 33px;
+}
+
+.list-item-staged .txt-item{
+    margin-left:10px;
+    font-size: 9px;
+    line-height: 33px;
+}
+
+.list-item-staged .num-counter{
+    display: flex;
+    float: right;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #bdbdbd;
+    box-sizing: border-box;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.app .my-info{
+    background-color: #FFF;
+    border-radius: 5px;
+
+}
+
+.my-info .container-mymoney{
+    padding:9px 27px;
+    background-color: #FFF;
+    border-radius: 5px;
+}
+
+
+.container-mymoney .info-mymoney{
+    padding: 6px 10px;
+    background-color: rgb(156, 173, 215);
+    border-radius: 5px;
+}
+
+info-mymoney .txt-mymoney{
+    float:right;
+    font-weight: 700;
+}
+
+.my-info .container-myitems{
+    margin-top: 20px;
+    padding: 25px 27px 26px;
+    background-color: #FFF;
+    border-radius: 5px;
+}
+
+.container-myitems .tit-myitem{
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 13px;
+    line-height: 20px;
+}
+
+.container-myitems .list-item-staged{
+    overflow-y: scroll;
+    height:364px;
+    padding: 12px;
+    background-color: rgb(156, 173, 215);
+    border: 1px solid #bdbdbd;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.container-myitems .txt-total{
+    display: block;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: right;
+    margin-top: 6px;
+}
+
+/* 미디어 쿼리 */
+@media only screen
+    and (min-device-width: 320px) /*기기의 넓이가 320 이상*/
+    and (max-device-width: 480px) /*기기의 넓이가 480 이하*/
+    and (-webkit-min-device-pixel-ratio: 2) /*기기 화면의 최소 1px 당 2개의 화소가 있어야 함*/
+{
+    body{
+        background-color: #FFF;
+    }
+    .app{
+        padding-top:65px;
+    }
+    .app .tit-app{
+        width: 166px;
+        height: 71px;
+    }
+    .my-info .container-myitems{
+        margin-top: 0;
+    }
 }
