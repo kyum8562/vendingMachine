@@ -21,7 +21,6 @@ class ColaGelerator {
     }
 
     colaFactory(data){
-        console.log('hi');
         data.forEach(el => {
             const item = document.createElement('li');
             let itemTemplate= `
