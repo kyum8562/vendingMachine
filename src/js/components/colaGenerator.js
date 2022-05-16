@@ -32,7 +32,7 @@ class ColaGelerator {
             `
             item.innerHTML = itemTemplate;
             this.itemList.appendChild(item);
-        });
+        }); 
     }
 }
 

@@ -1,56 +1,49 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vending Machine</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    <title>음료 자판기</title>
     <link rel="stylesheet" href="./src/style/style.css">
 </head>
 <body>
     <div class="app">
-        <h1 class="tit-app ir">제목</h1>
+        <h1 class="tit-app ir">cola</h1>
         <section class="vending-machine">
-            <h2 class="ir">자판기 화면</h1>
-
             <ul class="list-item"></ul>
-            <div class="container-return">
+            <div class="container1">
                 <div class="info-balance">
-                    잔액 : 
                     <span class="txt-balance">0 원</span>
                 </div>
                 <button type="button" class="btn-return">거스름돈 반환</button>
             </div>
-            <div class="container-put">
-                <input type="number" class="input-put" placeholder="입금액 입력">
+            <div class="container2">
+                <input type="number" class="input-put">
                 <button type="button" class="btn-put">입금</button>
             </div>
-            <section class="my-info"></section>
-            <div class="container-get">
-                <strong class="ir">선택한 음료</strong>
+            <div class="container3">
                 <ul class="list-item-staged">
+   
                 </ul>
-                <button class="btn-get">획득</button>
+                <button type="button" class="btn-get">획득</button>
             </div>
         </section>
+
         <section class="my-info">
-            <h2 class="ir">나의 정보 화면</h2>
-            <div class="container-mymoney">
+            <div class="container4">
                 <div class="info-mymoney">
                     소지금 : 
                     <span class="txt-mymoney">30,000 원</span>
                 </div>
             </div>
-            <div class="container-myitems">
+            <div class="container5">
                 <strong class="tit-myitem">획득한 음료</strong>
                 <ul class="list-item-staged">
 
                 </ul>
-                <strong class="txt-total">총금액 : 0 원</strong>
-            </div>   
+                <strong class="txt-total">총금액 : 0원</strong>
+            </div>
         </section>
     </div>
     <script type="module" src="./src/js/index.js"></script>

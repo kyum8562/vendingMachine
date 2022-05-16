@@ -7,8 +7,8 @@ class Vendingmachine{
         this.myMoney = document.querySelector('.txt-mymoney');
         this.listItem = document.querySelector('.list-item');
         this.inputCost = document.querySelector('.input-put');
-        this.stagedList = document.querySelector('.container-get .list-item-staged');
-        this.gotList = document.querySelector('.container-myitems .list-item-staged');
+        this.stagedList = document.querySelector('.container3 .list-item-staged');
+        this.gotList = document.querySelector('.container5 .list-item-staged');
         this.txtTotal = document.querySelector('.txt-total');
     }
 
@@ -37,7 +37,6 @@ class Vendingmachine{
             const inputCost = parseInt(this.inputCost.value);
             const myMoney = parseInt(this.myMoney.innerText.replace(',', ''));
             const balance = parseInt(this.balance.innerText.replace(',', ''));
-
             if(inputCost){
                 if(inputCost <= myMoney){
                     this.myMoney.innerText = new Intl.NumberFormat().format(myMoney - inputCost) + ' 원';
@@ -93,6 +92,7 @@ class Vendingmachine{
                     else{ // 담은 상품이 하나도 없다면
                         this.stagedItemGenerator(targetElBtn);
                     }
+                    console.log(isStaged);
                     targetElBtn.dataset.count--;
                     if(targetElBtn.dataset.count == 0){ // 상품이 소진됐을 때
                         e.target.classList.add('sold-out');
@@ -127,7 +127,7 @@ class Vendingmachine{
             this.gotList.querySelectorAll('li').forEach((item) => {
                 totalPrice += parseInt(item.dataset.price) * parseInt(item.querySelector('.num-counter').innerText);
             });
-            this.txtTotal.innerText = `총 금액 : ${new Intl.NumberFormat().format(totalPrice)}`;
+            this.txtTotal.innerText = `총 금액 : ${new Intl.NumberFormat().format(totalPrice)} 원`;
         });
     }
 }
